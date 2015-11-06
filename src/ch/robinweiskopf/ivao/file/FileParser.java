@@ -103,11 +103,11 @@ public class FileParser {
 					fbuff.add(fline);
 				} catch(ParseException e) {
 					String date = getCurrentTime();
-					errorWriter.write(date + " / in " + input.getName() + " / line " + lineNumber + ": " + e.getMessage() + SEP);
+					errorWriter.write(date + " " + input.getName() + " / line " + lineNumber + ": " + e.getMessage() + SEP);
 					++errorCount;
 				} catch(IOException e) {
 					String date = getCurrentTime();
-					errorWriter.write(date + " / in " + input.getName() + " / line " + lineNumber + ": " + e.getMessage() + SEP);
+					errorWriter.write(date + " " + input.getName() + " / line " + lineNumber + ": " + e.getMessage() + SEP);
 					++errorCount;
 				}
 				++lineNumber;
@@ -129,7 +129,7 @@ public class FileParser {
 	}
 	
 	private String getCurrentTime() {
-		DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+		DateFormat df = new SimpleDateFormat("[MM/dd/yyyy HH:mm:ss]");
 		Date now = new Date();
 		
 		return df.format(now);
