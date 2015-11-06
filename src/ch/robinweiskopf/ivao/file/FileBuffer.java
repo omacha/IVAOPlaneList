@@ -28,7 +28,7 @@ public class FileBuffer {
 		}
 		this.output = new BufferedWriter(new FileWriter(output));
 		
-		DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+		DateFormat df = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss a");
 		Date now = new Date();
 		
 		String currentDatetime = df.format(now);
